@@ -1,0 +1,89 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.content {
+    width: 90%;
+    margin: 10px 0;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.content img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;  /* Initial max-height for images */
+    object-fit: cover;
+}
+
+/* Mobile View (Default) */
+@media screen and (max-width: 771px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .content img {
+        max-height: 200px; /* Keep image height reasonable for mobile */
+    }
+}
+
+/* Tablet View - 772px and up */
+@media screen and (min-width: 772px) {
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .content {
+        width: 45vw; /* Divs will be 45% of the viewport width */
+        margin: 10px;
+    }
+
+    .content img {
+        max-height: 30vh; /* Limit image height to 30% of the viewport height */
+    }
+}
+
+/* Large Screen View - 998px and up */
+@media screen and (min-width: 998px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .content {
+        width: 30vw; /* Divs will be 30% of the viewport width */
+        margin: 10px;
+    }
+}
